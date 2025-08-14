@@ -65,7 +65,7 @@ contactForm.addEventListener("submit", async (e) => {
     });
 
     if (!response.ok) {
-      const error = (await response).text();
+      const error = await response.text();
       throw new Error(error || "Submission failed");
     }
 
