@@ -65,7 +65,7 @@ contactForm.addEventListener("submit", async (e) => {
     });
 
     if (!response.ok) {
-      const errorData = (await response).json();
+      const errorData = await response.json();
       throw new Error(errorData.message || "Request failed");
     }
 
