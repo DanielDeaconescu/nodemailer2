@@ -40,7 +40,9 @@ export default async (req, res) => {
       text: `Name: ${data["name"]}\nEmail: ${data.email}\nMessage: ${data.message}`,
     });
 
-    res.status(200).send("OK");
+    res
+      .status(200)
+      .json({ success: true, message: "Message sent successfully" });
   } catch (error) {
     console.error("Server error: ", error);
     res.status(500).json({ error: error.message || "Internal server error" });
