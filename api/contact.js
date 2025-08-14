@@ -27,7 +27,7 @@ export default async (req, res) => {
     from: `Gathering & Sending Data <${process.env.SMTP_USER}>`,
     to: process.env.RECIPIENT_EMAIL,
     subject: `New message from ${givenName}`,
-    text: `Name: ${name}\n Email: ${email}\n Message: ${message}`,
+    text: `Name: ${givenName}\n Email: ${givenEmail}\n Message: ${givenMessage}`,
   });
 
   res.status(200).send("OK");
